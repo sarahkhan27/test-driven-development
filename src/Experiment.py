@@ -3,7 +3,6 @@ class Experiment:
         """Initialize an empty experiment with a list to store SDT objects and labels."""
         self.conditions = []
         self.labels = []
-
 from src.SignalDetection import SignalDetection
 
 def add_condition(self, sdt_obj, label=None):
