@@ -1,18 +1,2 @@
-import sys
-import os
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-import unittest
-from src.Experiment import Experiment
-
-class TestExperiment(unittest.TestCase):
-    def test_experiment_initialization(self):
-        """Test that the Experiment constructor initializes an empty list."""
-        exp = Experiment()
-        self.assertTrue(hasattr(exp, 'conditions'))  # Check for 'conditions' instead of 'data'
-        self.assertIsInstance(exp.conditions, list)  # Ensure conditions is a list
-        self.assertEqual(exp.conditions, [])  # Ensure conditions is empty
-
-if __name__ == "__main__":
-    unittest.main()
+# This test.py file was created for practice and brain dumping
+# Note: initially I was going to run each test in individual files but chose to run them in one (TestExperiment.py) instead for better organization purposes/ better clarity
