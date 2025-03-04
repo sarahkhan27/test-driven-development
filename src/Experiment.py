@@ -34,6 +34,6 @@ class Experiment:
         for i in range(1, len(false_alarm_rates)):
             width = false_alarm_rates[i] - false_alarm_rates[i - 1]
             height = (hit_rates[i] + hit_rates[i - 1]) / 2
-            auc += width * height  # Trapezoidal rule
+            auc += width * height 
 
         return auc
