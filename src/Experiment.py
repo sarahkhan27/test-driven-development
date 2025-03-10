@@ -1,3 +1,5 @@
+# Acknowledging reference to and help from ChatGPT
+
 from SignalDetection import SignalDetection
 
 class Experiment:
