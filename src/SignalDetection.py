@@ -4,15 +4,6 @@ import scipy.stats as stats
 
 class SignalDetection:
     def __init__(self, hits, misses, falseAlarms, correctRejections):
-        """
-        Initialize SignalDetection with raw counts instead of rates.
-
-        Parameters:
-            hits (int): Number of hits (true positives).
-            misses (int): Number of misses (false negatives).
-            falseAlarms (int): Number of false alarms (false positives).
-            correctRejections (int): Number of correct rejections (true negatives).
-        """
         self.hits = hits
         self.misses = misses
         self.falseAlarms = falseAlarms
@@ -22,8 +13,6 @@ class SignalDetection:
         """
         Calculate the hit rate (sensitivity), which is the proportion of hits.
 
-        Returns:
-            float: The hit rate.
         """
         if (self.hits + self.misses) > 0:
             return self.hits / (self.hits + self.misses)
@@ -34,8 +23,6 @@ class SignalDetection:
         """
         Calculate the false alarm rate (1 - specificity), which is the proportion of false alarms.
 
-        Returns:
-            float: The false alarm rate.
         """
         if (self.falseAlarms + self.correctRejections) > 0:
             return self.falseAlarms / (self.falseAlarms + self.correctRejections)
@@ -46,8 +33,6 @@ class SignalDetection:
         """
         Calculate d-prime, a measure of sensitivity in signal detection theory.
 
-        Returns:
-            float: The d-prime value.
         """
         # Convert hit rate and false alarm rate to z-scores
         try:
@@ -63,8 +48,6 @@ class SignalDetection:
         """
         Calculate criterion (c), which measures the decision threshold.
 
-        Returns:
-            float: The criterion value.
         """
         # Convert hit rate and false alarm rate to z-scores
         try:
@@ -76,9 +59,7 @@ class SignalDetection:
         # Calculate criterion
         return -0.5 * (z_hit + z_false_alarm)
 
-# Example usage
 if __name__ == "__main__":
     sd = SignalDetection(15, 5, 15, 5)
-
     print(f"d-prime: {sd.d_prime():.2f}")
     print(f"criterion: {sd.criterion():.2f}")
